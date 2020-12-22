@@ -1,0 +1,46 @@
+html,
+
+body {
+  background-color: #eeeeee;
+  margin: 0;
+  overflow: hidden;
+  font-family: arial;
+}
+
+#vid3 {
+  background-color: skyblue;
+  height: 100%;
+  padding-bottom: 100%;
+  position: fixed;
+  transition-property: width,opacity ;
+  padding-left: 0%;
+  transition-duration: 1.5s;
+  width:30%;
+  opacity: 0.77;
+}
+
+#introduction{
+  width: 70%;
+  height: 100%;
+  top:50%;
+  padding-top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+
+}
+#test:hover{
+  transition-property: width,opacity;
+  transition-duration: 1.5s;
+  width:30%;
+  opacity: 0.7;
+}
+
+#block{
+  font-size: large;
+  margin: 10%;
+  top: 20px;
+  padding-top:20% ;
+  position: relative;
+  transform: translate(-50%, -50%);
+}

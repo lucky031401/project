@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>線上3D美術館 </title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id = "startVid" >
+      <video id="start1" autoplay width="100%" height="100%" >
+        <source src="/video/start.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div id="control">
+      <span> P:播放影片、圖片語音 Q:停止 E:影片資訊 ESC:退出</span>
+    </div>
+    <div id="test">
+      <span id= "block" > 介    紹</span>
+      <div id="introduction">tHelen Adams Keller (June 27, 1880 – June 1, 1968) was an American author, political activist, and lecturer. She was the first deaf-blind person to earn a Bachelor of Arts degree. The story of Keller and her teacher, Anne Sullivan, was made famous by Keller's autobiography, The Story of My Life, and its adaptations for film and stage, The Miracle Worker. Her birthplace in West Tuscumbia, Alabama, is now a museum[1] and sponsors an annual "Helen Keller Day". Her June 27 birthday is commemorated as Helen Keller Day in Pennsylvania and, in the centenary year of her birth, was recognized by a presidential proclamation from Jimmy Carter.</div>
+    </div><!-- As a link -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+      <a class="navbar-brand" href="#">線上展覽館</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active" >
+            <a class="nav-link" href="#" id="start">START <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" id="instruction">
+            <a class="nav-link" href="#" >INSTRUCTIONS</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              SELECT AREA
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#" id = "area1">GALLERY</a>
+              <a class="dropdown-item" href="#" id ="area2">MEDIA</a>
+              <a class="dropdown-item" href="#" id = "area3">SCULPTURES</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="stats">
+      <div id="blocker1">
+      <DIV id="navIn" style="background-color:#dddddd;line-height:80px;font-family: serif;">【操作說明】
+        <img src="./img/instructions.png" id = "img" alt="操作說明" width="870px" height="290px" >
+        <button type="button" class="close" aria-label="Close" id="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </DIV>
+    </div>
+    <audio id="bgm" src="./sound/music_1.mp3" ></audio>
+    <audio id="media0" src="./sound/intro_0.mp3"></audio>
+    <audio id="media1" src="./sound/intro_1.mp3"></audio>
+    <audio id="media2" src="sound/intro_2.mp3"></audio>
+    <video id="videos">
+    <video id ="media3" width="640" height="480" controls>
+      <source src="./video/video0.mp4" type="video/mp4" loop>
+      Your browser does not support the video tag.
+    </video>
+    
+    <video id ="media4" width="640" height="480" controls>
+      <source src="./video/video1.mp4" type="video/mp4" loop>
+      Your browser does not support the video tag.
+    </video>
+    <video id ="media5" width="640" height="480" controls>
+      <source src="./video/video2.mp4" type="video/mp4" loop>
+      Your browser does not support the video tag.
+    </video>
+    <video id ="media6" width="640" height="480" controls>
+      <source src="./video/video3.mp4" type="video/mp4" loop>
+      Your browser does not support the video tag.
+    </video>
+    </video>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="./lib/PointerLockControl.js"></script>
+    <script src="./lib/OBJLoader.js"></script>
+    <script src="./lib/GLTFLoader.js"></script>
+    <script src="https://threejs.org/examples/js/loaders/MTLLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.3/dat.gui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+    <!--自己編寫的函式庫-->
+    <script src="./js/cameraSettings.js"></script>
+    <script src="js/createGeometry.js"></script>
+    <script src="./js/PointerLockControlModule.js"></script>
+    <script src="./js/initCannon.js"></script>
+    <!--script src="./js/helpers.js"></script-->
+    <script src="./js/loaders.js"></script>
+    <script src="js/movements.js"></script>
+    <script src="./js/picture.js"></script>
+    <script src="./js/video.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
